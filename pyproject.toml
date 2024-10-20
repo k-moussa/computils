@@ -1,5 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = [
+"setuptools>=61.0",
+"numpy >= 1.26.4",
+"scipy >= 1.13.0",
+"numba >= 0.59.1",
+"splines >= 0.3.1",
+]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,7 +16,7 @@ authors = [
 ]
 description = "A package collecting functionality for various numerical computations (numerical differentiation, interpolation, optimization, sorting, )."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -18,5 +24,5 @@ classifiers = [
 ]
 
 [project.urls]
-# Homepage = "https://github.com/pypa/sampleproject"
+Homepage = "https://github.com/k-moussa/computils"
 # Issues = "https://github.com/pypa/sampleproject/issues"
