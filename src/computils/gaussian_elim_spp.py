@@ -15,7 +15,6 @@ def compute_inverse_using_gauss_elim_spp(square_matrix: np.ndarray) -> np.ndarra
     return inverse_matrix
 
 
-@jit(nopython=True, fastmath=True)
 def perform_gauss_elim_spp(a: np.ndarray,
                            b: np.ndarray) -> np.ndarray:
     """ Performs Gaussian elimination with scaled partial pivoting to put the matrix [a b] in echelon form.
@@ -45,7 +44,6 @@ def perform_gauss_elim_spp(a: np.ndarray,
     return echelon_matrix
 
 
-@jit(nopython=True, fastmath=True)
 def perform_back_substitution(echelon_matrix: np.ndarray) -> np.ndarray:
     """ Transforms a matrix in echelon form to reduced echelon form using back substitution.
     
