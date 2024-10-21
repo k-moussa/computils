@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.abspath("../src/"))
 project = 'computils documentation'
 copyright = '2024, k-moussa'
 author = 'k-moussa'
-release = '0.0.1'
+release = '0.0.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
