@@ -4,26 +4,70 @@ import numpy as np
 
 
 def impose_lower_bound(transformed_parameter: float, lower_bound: float) -> float:
+    """ Imposes a lower bound on transformed_parameter.
+
+    :param transformed_parameter: any real number.
+    :param lower_bound: any real number.
+    :return: the corresponding parameter value with the lower bound imposed.
+    """
+
     return np.exp(transformed_parameter) + lower_bound
 
 
 def inverse_impose_lower_bound(parameter: float, lower_bound: float) -> float:
+    """ Applies the inverse lower-bound transformation to parameter.
+
+    :param parameter: a real number which adheres to the given lower bound.
+    :param lower_bound: any real number.
+    :return: the transformed parameter, which can take on any real number.
+    """
+
     return np.log(parameter - lower_bound)
 
 
 def impose_upper_bound(transformed_parameter: float, upper_bound: float) -> float:
+    """ Imposes an upper bound on transformed_parameter.
+
+    :param transformed_parameter: any real number.
+    :param upper_bound: any real number.
+    :return: the corresponding parameter value with the upper bound imposed.
+    """
+
     return -np.exp(transformed_parameter) + upper_bound
 
 
 def inverse_impose_upper_bound(parameter: float, upper_bound: float) -> float:
+    """ Applies the inverse upper-bound transformation to parameter.
+
+    :param parameter: a real number which adheres to the given upper bound.
+    :param upper_bound: any real number.
+    :return: the transformed parameter, which can take on any real number.
+    """
+
     return np.log(upper_bound - parameter)
 
 
 def impose_bounds(transformed_parameter: float, lower_bound: float, upper_bound: float) -> float:
+    """ Imposes a lower and an upper bound on transformed_parameter.
+
+    :param transformed_parameter: any real number.
+    :param lower_bound: any real number.
+    :param upper_bound: any real number strictly larger than lower bound.
+    :return: a real number which adheres to the given bounds.
+    """
+
     return lower_bound + (upper_bound - lower_bound)/(1.0 + np.exp(-transformed_parameter))
 
 
 def inverse_impose_bounds(parameter: float, lower_bound: float, upper_bound: float) -> float:
+    """ Applies the inverse bounds transformation to parameter.
+
+    :param parameter: a real number which adheres to the given bounds.
+    :param lower_bound: any real number.
+    :param upper_bound: any real number strictly larger than lower bound.
+    :return: the transformed parameter, which can take on any real number.
+    """
+
     z = (parameter - lower_bound)/(upper_bound - lower_bound)
     return np.log(z) - np.log(1.0 - z)
 

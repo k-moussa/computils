@@ -7,6 +7,12 @@ from scipy.linalg import inv, det
 
 
 def fast_matrix_inversion(M: np.ndarray) -> np.ndarray:
+    """ Performs fast matrix inversion.
+
+    :param M:
+    :return: The inverse of M.
+    """
+
     if M.size == 1:
         return 1.0 / M
     elif issparse(M):
@@ -16,6 +22,11 @@ def fast_matrix_inversion(M: np.ndarray) -> np.ndarray:
 
 
 def fast_determinant(M: np.ndarray) -> float:
+    """ Computes the determinant of M.
+
+    :param M:
+    :return: det(M).
+    """
     if M.size == 1:
         return np.abs(M[0, 0])
     else:
@@ -24,17 +35,13 @@ def fast_determinant(M: np.ndarray) -> float:
 
 def fast_quadratic_form(A: np.ndarray,
                         x: np.ndarray) -> float:
+    """ Computes the quadratic form x'Ax.
+
+    :param A: An (n,n) array.
+    :param x: An (n,1) array.
+    :return: the quadratic form x'Ax.
+    """
     return (np.dot(x.T, np.dot(A, x)))[0, 0]
-
-
-def fast_diag_mult_AD(A: np.ndarray,
-                      D: np.ndarray) -> np.ndarray:
-    return np.multiply(A, np.diag(D))
-
-
-def fast_diag_mult_DA(A: np.ndarray,
-                      D: np.ndarray) -> np.ndarray:
-    return np.multiply(np.diag(D)[:, None], A)
 
 
 def fast_columnwise_bilinear_form(A: np.ndarray,

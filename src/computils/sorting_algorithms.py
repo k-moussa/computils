@@ -38,7 +38,7 @@ def find_lt(a: Sequence,
     
     :param a: 
     :param x: an object with '<' and '==' operators.
-    :return: 
+    :return: the rightmost value in a that is less than x.
     """
 
     _check_args(a=a, x=x)
@@ -55,7 +55,7 @@ def find_le(a: Sequence,
 
     :param a: 
     :param x: an object with '<' and '==' operators.
-    :return: 
+    :return: the rightmost value in a that is less than or equal to x.
     """
 
     _check_args(a=a, x=x)
@@ -72,7 +72,7 @@ def find_gt(a: Sequence,
 
     :param a: 
     :param x: an object with '<' and '==' operators.
-    :return: 
+    :return: the leftmost value in a that is greater than x.
     """
 
     _check_args(a=a, x=x)
@@ -87,11 +87,11 @@ def find_ge(a: Sequence,
             x: Any) -> Any:
     """ Returns the leftmost value in a that is greater than or equal to x.
 
-        Remark: raises a value error if 
+    Remark: raises a value error if
 
     :param a: 
     :param x: an object with '<' and '==' operators.
-    :return: 
+    :return: the leftmost value in a that is greater than or equal to x.
     """
 
     _check_args(a=a, x=x)

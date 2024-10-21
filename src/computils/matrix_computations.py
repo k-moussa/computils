@@ -20,4 +20,10 @@ def robust_inverse(square_matrix: np.ndarray) -> np.ndarray:
 
 
 def is_diagonal(matrix: np.ndarray) -> bool:
+    """ Determines if the given matrix is diagonal.
+
+    :param matrix:
+    :return: True if matrix is diagonal, False otherwise.
+    """
+
     return np.count_nonzero(matrix - np.diag(np.diagonal(matrix))) == 0

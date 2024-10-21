@@ -12,8 +12,7 @@ from .factory import create_interpolator
 from .sorting_algorithms import index_eq, find_le, find_ge, find_gt, find_lt
 from .finite_difference import compute_derivative, compute_gradient, compute_jacobian, compute_hessian
 from .type_utils import size
-from .fast_eval import fast_matrix_inversion, fast_determinant, fast_quadratic_form, fast_diag_mult_AD, \
-    fast_diag_mult_DA, fast_columnwise_bilinear_form
+from .fast_eval import fast_matrix_inversion, fast_determinant, fast_quadratic_form, fast_columnwise_bilinear_form
 from .gaussian_elim_spp import compute_inverse_using_gauss_elim_spp
 from .matrix_computations import robust_inverse, is_diagonal
 from .parameter_transformations import impose_lower_bound, inverse_impose_lower_bound, impose_upper_bound, \

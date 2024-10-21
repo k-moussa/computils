@@ -5,20 +5,20 @@ from enum import Enum
 from abc import ABC, abstractmethod
 from typing import final, Union
 
-MACHINE_EPS: final = float(2 ** (-53))  # max relative error corresponding to 1/2 ULP
-SQUARE_ROOT_MACHINE_EPS: final = np.sqrt(MACHINE_EPS)
-CUBE_ROOT_MACHINE_EPS: final = np.cbrt(MACHINE_EPS)
-FOURTH_ROOT_MACHINE_EPS: final = np.power(MACHINE_EPS, 1/4)
+MACHINE_EPS: final = float(2 ** (-53))  #: max relative error corresponding to 1/2 ULP
+SQUARE_ROOT_MACHINE_EPS: final = np.sqrt(MACHINE_EPS)  #:
+CUBE_ROOT_MACHINE_EPS: final = np.cbrt(MACHINE_EPS)  #:
+FOURTH_ROOT_MACHINE_EPS: final = np.power(MACHINE_EPS, 1/4)  #:
 
-Integer: final = Union[int, np.int8, np.int16, np.int32, np.int64, np.uint8, np.uint16, np.uint32, np.uint64]
-Float: final = Union[float, np.float16, np.float32, np.float64, np.float128]
-Complex: final = Union[complex, np.complex64, np.complex128, np.complex256]
-Scalar: final = Union[Integer, Float, Complex]
+Integer: final = Union[int, np.int8, np.int16, np.int32, np.int64, np.uint8, np.uint16, np.uint32, np.uint64]  #:
+Float: final = Union[float, np.float16, np.float32, np.float64, np.float128]  #:
+Complex: final = Union[complex, np.complex64, np.complex128, np.complex256]  #:
+Scalar: final = Union[Integer, Float, Complex]  #:
 
-IntOrArray: final = Union[Integer, np.ndarray]
-FloatOrArray: final = Union[Float, np.ndarray]
-ComplexOrArray: final = Union[Complex, np.ndarray]
-ScalarOrArray: final = Union[Scalar, np.ndarray]
+IntOrArray: final = Union[Integer, np.ndarray]  #:
+FloatOrArray: final = Union[Float, np.ndarray]  #:
+ComplexOrArray: final = Union[Complex, np.ndarray]   #:
+ScalarOrArray: final = Union[Scalar, np.ndarray]   #:
 
 
 # 128-bit integers generated using entropy gathered from the OS, for fixing the seed of NumPy generators.
@@ -35,30 +35,35 @@ SEED128_10: final = 260473913589332506348144405693894964574
 
 
 class InterpolationType(Enum):
-    linear = 0
-    ncs = 1  # natural cubic spline
-    ccs = 2  # clamped cubic spline
-    pmc = 3  # piecewise monotone cubic [FC80]
-    pchip = 4  # [FB84]
+    linear = 0  #: linear interpolation
+    ncs = 1  #: natural cubic spline
+    ccs = 2  #: clamped cubic spline
+    pmc = 3  #: piecewise monotone cubic [FC80]
+    pchip = 4  #: piecewise cubic Hermite interpolation polynomial [FB84]
 
 
 class ExtrapolationType(Enum):
-    nan = 0
-    flat = 1
+    nan = 0  #: set extrapolated values to nan
+    flat = 1  #: set all extrapolated values equal to the nearest interpolated value (constant or flat extrapolation).
 
 
 class Interpolator(ABC):
     def __init__(self,
                  inter_type: InterpolationType,
                  extra_type: ExtrapolationType):
+        """ Class to perform inter- and extrapolation.
 
-        self.inter_type: InterpolationType = inter_type
-        self.extra_type: ExtrapolationType = extra_type
+        :param inter_type: interpolation type.
+        :param extra_type: extrapolation type.
+        """
+
+        self.inter_type: InterpolationType = inter_type  #: the interpolation type
+        self.extra_type: ExtrapolationType = extra_type  #: the extrapolation type
 
     @abstractmethod
     def __call__(self, x: ScalarOrArray) -> ScalarOrArray:
-        """
+        """ Returns the inter- or extrapolated value(s) at the given domain value(s) 'x'.
 
-        :param x:
-        :return:
+        :param x: domain value(s) at which to compute the inter- or extrapolated value.
+        :return: the inter- or extrapolated value(s).
         """
