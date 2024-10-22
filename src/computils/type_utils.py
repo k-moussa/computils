@@ -56,13 +56,12 @@ def compute_hash(a: np.ndarray,
                  include_dtype: bool = False,
                  include_shape: bool = False) -> str:
     """ Returns a hash for the given array a. The hashing algorithm for np arrays is based on
-        https://stackoverflow.com/questions/64753916/unique-identifier-for-numpy-array
+    https://stackoverflow.com/questions/64753916/unique-identifier-for-numpy-array
 
     :param a:
     :param n_chars: the number of characters in the hashing string.
     :param include_dtype: if True also incorporate the dtype in the hash.
-    :param include_shape: if True also incorporate the shape in the hash (so two arrays with identical elements but a
-    different shape receive a different hash string).
+    :param include_shape: if True also incorporate the shape in the hash (so two arrays with identical elements but a different shape receive a different hash string).
     :return: the hash string corresponding to the given array.
     """
 
