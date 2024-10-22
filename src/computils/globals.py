@@ -14,11 +14,13 @@ Integer: final = Union[int, np.int8, np.int16, np.int32, np.int64, np.uint8, np.
 Float: final = Union[float, np.float16, np.float32, np.float64, np.float128]  #:
 Complex: final = Union[complex, np.complex64, np.complex128, np.complex256]  #:
 Scalar: final = Union[Integer, Float, Complex]  #:
+Bool: final = Union[bool, np.bool_]
 
 IntOrArray: final = Union[Integer, np.ndarray]  #:
 FloatOrArray: final = Union[Float, np.ndarray]  #:
 ComplexOrArray: final = Union[Complex, np.ndarray]   #:
 ScalarOrArray: final = Union[Scalar, np.ndarray]   #:
+BoolOrArray = Union[Bool, np.ndarray]  #:
 
 
 # 128-bit integers generated using entropy gathered from the OS, for fixing the seed of NumPy generators.

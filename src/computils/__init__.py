@@ -11,7 +11,7 @@ from .globals import *
 from .factory import create_interpolator
 from .sorting_algorithms import index_eq, find_le, find_ge, find_gt, find_lt
 from .finite_difference import compute_derivative, compute_gradient, compute_jacobian, compute_hessian
-from .type_utils import size
+from .type_utils import size, to_1d_array, to_float_if_singleton, has_nan, compute_hash, dicts_to_array, dict_to_array
 from .fast_eval import fast_matrix_inversion, fast_determinant, fast_quadratic_form, fast_columnwise_bilinear_form
 from .gaussian_elim_spp import compute_inverse_using_gauss_elim_spp
 from .matrix_computations import robust_inverse, is_diagonal
@@ -19,3 +19,4 @@ from .parameter_transformations import impose_lower_bound, inverse_impose_lower_
     inverse_impose_upper_bound, impose_bounds, inverse_impose_bounds, impose_upper_bound_sum, \
     inverse_impose_upper_bound_sum
 from .performance_checking import compute_average_running_time
+from .parallelization import BatchAllocation, get_batch_allocations, get_n_physical_cores
