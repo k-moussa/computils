@@ -4,4 +4,4 @@ scipy >= 1.10.1
 numba >= 0.58.1
 splines >= 0.3.1
 psutil>=5.9.0
-sphinx-rtd-theme
+sphinx_rtd_theme
