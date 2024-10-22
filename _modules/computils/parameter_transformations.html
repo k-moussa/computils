@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>computils.parameter_transformations &mdash; computils documentation 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=c1dcd045"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            computils documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">computils documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">computils.parameter_transformations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for computils.parameter_transformations</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot; This module contains transformations and their inverse functions for imposing parameter restrictions. &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="impose_lower_bound"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.impose_lower_bound">[docs]</a><span class="k">def</span> <span class="nf">impose_lower_bound</span><span class="p">(</span><span class="n">transformed_parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Imposes a lower bound on transformed_parameter.</span>
+
+<span class="sd">    :param transformed_parameter: any real number.</span>
+<span class="sd">    :param lower_bound: any real number.</span>
+<span class="sd">    :return: the corresponding parameter value with the lower bound imposed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">transformed_parameter</span><span class="p">)</span> <span class="o">+</span> <span class="n">lower_bound</span></div>
+
+
+<div class="viewcode-block" id="inverse_impose_lower_bound"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.inverse_impose_lower_bound">[docs]</a><span class="k">def</span> <span class="nf">inverse_impose_lower_bound</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Applies the inverse lower-bound transformation to parameter.</span>
+
+<span class="sd">    :param parameter: a real number which adheres to the given lower bound.</span>
+<span class="sd">    :param lower_bound: any real number.</span>
+<span class="sd">    :return: the transformed parameter, which can take on any real number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">parameter</span> <span class="o">-</span> <span class="n">lower_bound</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="impose_upper_bound"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.impose_upper_bound">[docs]</a><span class="k">def</span> <span class="nf">impose_upper_bound</span><span class="p">(</span><span class="n">transformed_parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Imposes an upper bound on transformed_parameter.</span>
+
+<span class="sd">    :param transformed_parameter: any real number.</span>
+<span class="sd">    :param upper_bound: any real number.</span>
+<span class="sd">    :return: the corresponding parameter value with the upper bound imposed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">transformed_parameter</span><span class="p">)</span> <span class="o">+</span> <span class="n">upper_bound</span></div>
+
+
+<div class="viewcode-block" id="inverse_impose_upper_bound"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.inverse_impose_upper_bound">[docs]</a><span class="k">def</span> <span class="nf">inverse_impose_upper_bound</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Applies the inverse upper-bound transformation to parameter.</span>
+
+<span class="sd">    :param parameter: a real number which adheres to the given upper bound.</span>
+<span class="sd">    :param upper_bound: any real number.</span>
+<span class="sd">    :return: the transformed parameter, which can take on any real number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">upper_bound</span> <span class="o">-</span> <span class="n">parameter</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="impose_bounds"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.impose_bounds">[docs]</a><span class="k">def</span> <span class="nf">impose_bounds</span><span class="p">(</span><span class="n">transformed_parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Imposes a lower and an upper bound on transformed_parameter.</span>
+
+<span class="sd">    :param transformed_parameter: any real number.</span>
+<span class="sd">    :param lower_bound: any real number.</span>
+<span class="sd">    :param upper_bound: any real number strictly larger than lower bound.</span>
+<span class="sd">    :return: a real number which adheres to the given bounds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">lower_bound</span> <span class="o">+</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">-</span> <span class="n">lower_bound</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">transformed_parameter</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="inverse_impose_bounds"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.inverse_impose_bounds">[docs]</a><span class="k">def</span> <span class="nf">inverse_impose_bounds</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Applies the inverse bounds transformation to parameter.</span>
+
+<span class="sd">    :param parameter: a real number which adheres to the given bounds.</span>
+<span class="sd">    :param lower_bound: any real number.</span>
+<span class="sd">    :param upper_bound: any real number strictly larger than lower bound.</span>
+<span class="sd">    :return: the transformed parameter, which can take on any real number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">parameter</span> <span class="o">-</span> <span class="n">lower_bound</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">upper_bound</span> <span class="o">-</span> <span class="n">lower_bound</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="impose_upper_bound_sum"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.impose_upper_bound_sum">[docs]</a><span class="k">def</span> <span class="nf">impose_upper_bound_sum</span><span class="p">(</span><span class="n">transformed_params</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Imposes an upper bound on the sum of params, such that all params are in (0, upper_bound).</span>
+
+<span class="sd">    :param transformed_params: (n_params,) array of transformed parameters, real numbers</span>
+<span class="sd">    :param upper_bound: real number</span>
+<span class="sd">    :return: constrained_params: (n_params,) array of parameters with constraints</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">exp_trans_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">transformed_params</span><span class="p">)</span>
+    <span class="n">constrained_params</span> <span class="o">=</span> <span class="n">upper_bound</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">exp_trans_params</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">exp_trans_params</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">constrained_params</span></div>
+
+
+<div class="viewcode-block" id="inverse_impose_upper_bound_sum"><a class="viewcode-back" href="../../computils.html#computils.parameter_transformations.inverse_impose_upper_bound_sum">[docs]</a><span class="k">def</span> <span class="nf">inverse_impose_upper_bound_sum</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  Inverse transformation function of impose_upper_bound_sum.</span>
+
+<span class="sd">    :param params: (n_params,) array of params that are all in (0, upper_bound)</span>
+<span class="sd">    :param upper_bound: real number</span>
+<span class="sd">    :return: unconstrained_params</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">sum_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">unconstrained_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">params</span> <span class="o">/</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">-</span> <span class="n">sum_params</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">unconstrained_params</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, k-moussa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

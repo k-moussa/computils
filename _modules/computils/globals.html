@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>computils.globals &mdash; computils documentation 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=c1dcd045"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            computils documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">computils documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">computils.globals</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for computils.globals</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot; This module collects all exposed types.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">final</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="n">MACHINE_EPS</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">53</span><span class="p">))</span>  <span class="c1">#: max relative error corresponding to 1/2 ULP</span>
+<span class="n">SQUARE_ROOT_MACHINE_EPS</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MACHINE_EPS</span><span class="p">)</span>  <span class="c1">#:</span>
+<span class="n">CUBE_ROOT_MACHINE_EPS</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cbrt</span><span class="p">(</span><span class="n">MACHINE_EPS</span><span class="p">)</span>  <span class="c1">#:</span>
+<span class="n">FOURTH_ROOT_MACHINE_EPS</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">MACHINE_EPS</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>  <span class="c1">#:</span>
+
+<span class="n">Integer</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">Float</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">Complex</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">complex256</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">Scalar</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Complex</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">Bool</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]</span>
+
+<span class="n">IntOrArray</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">FloatOrArray</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>  <span class="c1">#:</span>
+<span class="n">ComplexOrArray</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Complex</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>   <span class="c1">#:</span>
+<span class="n">ScalarOrArray</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Scalar</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>   <span class="c1">#:</span>
+<span class="n">BoolOrArray</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Bool</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>  <span class="c1">#:</span>
+
+
+<span class="c1"># 128-bit integers generated using entropy gathered from the OS, for fixing the seed of NumPy generators.</span>
+<span class="n">SEED128_1</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">137088887599416403785824428186011523708</span>
+<span class="n">SEED128_2</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">230453062773196406322953725600125856954</span>
+<span class="n">SEED128_3</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">334883455271001690768699206953238296696</span>
+<span class="n">SEED128_4</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">69805789651723487751993596682833892465</span>
+<span class="n">SEED128_5</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">107997836754270478432192384195731366045</span>
+<span class="n">SEED128_6</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">61384398454038591198002507585631369346</span>
+<span class="n">SEED128_7</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">165303562401480433055547884045914282112</span>
+<span class="n">SEED128_8</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">215418768511176275020128984871223831370</span>
+<span class="n">SEED128_9</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">247520618467519227348322182729719821192</span>
+<span class="n">SEED128_10</span><span class="p">:</span> <span class="n">final</span> <span class="o">=</span> <span class="mi">260473913589332506348144405693894964574</span>
+
+
+<div class="viewcode-block" id="InterpolationType"><a class="viewcode-back" href="../../computils.html#computils.globals.InterpolationType">[docs]</a><span class="k">class</span> <span class="nc">InterpolationType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">linear</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">#: linear interpolation</span>
+    <span class="n">ncs</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#: natural cubic spline</span>
+    <span class="n">ccs</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">#: clamped cubic spline</span>
+    <span class="n">pmc</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">#: piecewise monotone cubic [FC80]</span>
+    <span class="n">pchip</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1">#: piecewise cubic Hermite interpolation polynomial [FB84]</span></div>
+
+
+<div class="viewcode-block" id="ExtrapolationType"><a class="viewcode-back" href="../../computils.html#computils.globals.ExtrapolationType">[docs]</a><span class="k">class</span> <span class="nc">ExtrapolationType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">nan</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">#: set extrapolated values to nan</span>
+    <span class="n">flat</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#: set all extrapolated values equal to the nearest interpolated value (constant or flat extrapolation).</span></div>
+
+
+<div class="viewcode-block" id="Interpolator"><a class="viewcode-back" href="../../computils.html#computils.globals.Interpolator">[docs]</a><span class="k">class</span> <span class="nc">Interpolator</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<div class="viewcode-block" id="Interpolator.__init__"><a class="viewcode-back" href="../../computils.html#computils.globals.Interpolator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">inter_type</span><span class="p">:</span> <span class="n">InterpolationType</span><span class="p">,</span>
+                 <span class="n">extra_type</span><span class="p">:</span> <span class="n">ExtrapolationType</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Class to perform inter- and extrapolation.</span>
+
+<span class="sd">        :param inter_type: interpolation type.</span>
+<span class="sd">        :param extra_type: extrapolation type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">inter_type</span><span class="p">:</span> <span class="n">InterpolationType</span> <span class="o">=</span> <span class="n">inter_type</span>  <span class="c1">#: the interpolation type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extra_type</span><span class="p">:</span> <span class="n">ExtrapolationType</span> <span class="o">=</span> <span class="n">extra_type</span>  <span class="c1">#: the extrapolation type</span></div>
+
+<div class="viewcode-block" id="Interpolator.__call__"><a class="viewcode-back" href="../../computils.html#computils.globals.Interpolator.__call__">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">ScalarOrArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScalarOrArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns the inter- or extrapolated value(s) at the given domain value(s) &#39;x&#39;.</span>
+
+<span class="sd">        :param x: domain value(s) at which to compute the inter- or extrapolated value.</span>
+<span class="sd">        :return: the inter- or extrapolated value(s).</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, k-moussa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

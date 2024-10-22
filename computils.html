@@ -1,0 +1,1104 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>computils package &mdash; computils documentation 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=c1dcd045"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            computils documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">computils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.factory">computils.factory module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.factory.create_interpolator"><code class="docutils literal notranslate"><span class="pre">create_interpolator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.fast_eval">computils.fast_eval module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.fast_eval.fast_matrix_inversion"><code class="docutils literal notranslate"><span class="pre">fast_matrix_inversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.fast_eval.fast_determinant"><code class="docutils literal notranslate"><span class="pre">fast_determinant()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.fast_eval.fast_quadratic_form"><code class="docutils literal notranslate"><span class="pre">fast_quadratic_form()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.fast_eval.fast_columnwise_bilinear_form"><code class="docutils literal notranslate"><span class="pre">fast_columnwise_bilinear_form()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.finite_difference">computils.finite_difference module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.finite_difference.compute_derivative"><code class="docutils literal notranslate"><span class="pre">compute_derivative()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.finite_difference.compute_gradient"><code class="docutils literal notranslate"><span class="pre">compute_gradient()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.finite_difference.compute_jacobian"><code class="docutils literal notranslate"><span class="pre">compute_jacobian()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.finite_difference.compute_hessian"><code class="docutils literal notranslate"><span class="pre">compute_hessian()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.finite_difference.get_step_sizes"><code class="docutils literal notranslate"><span class="pre">get_step_sizes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.gaussian_elim_spp">computils.gaussian_elim_spp module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.gaussian_elim_spp.compute_inverse_using_gauss_elim_spp"><code class="docutils literal notranslate"><span class="pre">compute_inverse_using_gauss_elim_spp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.gaussian_elim_spp.perform_gauss_elim_spp"><code class="docutils literal notranslate"><span class="pre">perform_gauss_elim_spp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.gaussian_elim_spp.perform_back_substitution"><code class="docutils literal notranslate"><span class="pre">perform_back_substitution()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.globals">computils.globals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.MACHINE_EPS"><code class="docutils literal notranslate"><span class="pre">MACHINE_EPS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.SQUARE_ROOT_MACHINE_EPS"><code class="docutils literal notranslate"><span class="pre">SQUARE_ROOT_MACHINE_EPS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.CUBE_ROOT_MACHINE_EPS"><code class="docutils literal notranslate"><span class="pre">CUBE_ROOT_MACHINE_EPS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.FOURTH_ROOT_MACHINE_EPS"><code class="docutils literal notranslate"><span class="pre">FOURTH_ROOT_MACHINE_EPS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.Integer"><code class="docutils literal notranslate"><span class="pre">Integer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.Float"><code class="docutils literal notranslate"><span class="pre">Float</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.Complex"><code class="docutils literal notranslate"><span class="pre">Complex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.Scalar"><code class="docutils literal notranslate"><span class="pre">Scalar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.IntOrArray"><code class="docutils literal notranslate"><span class="pre">IntOrArray</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.FloatOrArray"><code class="docutils literal notranslate"><span class="pre">FloatOrArray</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.ComplexOrArray"><code class="docutils literal notranslate"><span class="pre">ComplexOrArray</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.ScalarOrArray"><code class="docutils literal notranslate"><span class="pre">ScalarOrArray</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.BoolOrArray"><code class="docutils literal notranslate"><span class="pre">BoolOrArray</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.InterpolationType"><code class="docutils literal notranslate"><span class="pre">InterpolationType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.ExtrapolationType"><code class="docutils literal notranslate"><span class="pre">ExtrapolationType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.globals.Interpolator"><code class="docutils literal notranslate"><span class="pre">Interpolator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.matrix_computations">computils.matrix_computations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.matrix_computations.robust_inverse"><code class="docutils literal notranslate"><span class="pre">robust_inverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.matrix_computations.is_diagonal"><code class="docutils literal notranslate"><span class="pre">is_diagonal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.parallelization">computils.parallelization module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parallelization.BatchAllocation"><code class="docutils literal notranslate"><span class="pre">BatchAllocation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parallelization.get_batch_allocations"><code class="docutils literal notranslate"><span class="pre">get_batch_allocations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parallelization.get_n_physical_cores"><code class="docutils literal notranslate"><span class="pre">get_n_physical_cores()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.parameter_transformations">computils.parameter_transformations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.impose_lower_bound"><code class="docutils literal notranslate"><span class="pre">impose_lower_bound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.inverse_impose_lower_bound"><code class="docutils literal notranslate"><span class="pre">inverse_impose_lower_bound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.impose_upper_bound"><code class="docutils literal notranslate"><span class="pre">impose_upper_bound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.inverse_impose_upper_bound"><code class="docutils literal notranslate"><span class="pre">inverse_impose_upper_bound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.impose_bounds"><code class="docutils literal notranslate"><span class="pre">impose_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.inverse_impose_bounds"><code class="docutils literal notranslate"><span class="pre">inverse_impose_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.impose_upper_bound_sum"><code class="docutils literal notranslate"><span class="pre">impose_upper_bound_sum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.parameter_transformations.inverse_impose_upper_bound_sum"><code class="docutils literal notranslate"><span class="pre">inverse_impose_upper_bound_sum()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.performance_checking">computils.performance_checking module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.performance_checking.compute_average_running_time"><code class="docutils literal notranslate"><span class="pre">compute_average_running_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.sorting_algorithms">computils.sorting_algorithms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.sorting_algorithms.index_eq"><code class="docutils literal notranslate"><span class="pre">index_eq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.sorting_algorithms.find_lt"><code class="docutils literal notranslate"><span class="pre">find_lt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.sorting_algorithms.find_le"><code class="docutils literal notranslate"><span class="pre">find_le()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.sorting_algorithms.find_gt"><code class="docutils literal notranslate"><span class="pre">find_gt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.sorting_algorithms.find_ge"><code class="docutils literal notranslate"><span class="pre">find_ge()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils.type_utils">computils.type_utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.size"><code class="docutils literal notranslate"><span class="pre">size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.to_1d_array"><code class="docutils literal notranslate"><span class="pre">to_1d_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.to_float_if_singleton"><code class="docutils literal notranslate"><span class="pre">to_float_if_singleton()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.has_nan"><code class="docutils literal notranslate"><span class="pre">has_nan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.compute_hash"><code class="docutils literal notranslate"><span class="pre">compute_hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.dicts_to_array"><code class="docutils literal notranslate"><span class="pre">dicts_to_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computils.type_utils.dict_to_array"><code class="docutils literal notranslate"><span class="pre">dict_to_array()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-computils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">computils documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">computils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/computils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="computils-package">
+<h1>computils package<a class="headerlink" href="#computils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-computils.factory">
+<span id="computils-factory-module"></span><h2>computils.factory module<a class="headerlink" href="#module-computils.factory" title="Permalink to this heading"></a></h2>
+<p>This module is used to instantiate classes in the package.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.factory.create_interpolator">
+<span class="sig-prename descclassname"><span class="pre">computils.factory.</span></span><span class="sig-name descname"><span class="pre">create_interpolator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.InterpolationType" title="computils.globals.InterpolationType"><span class="pre">InterpolationType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.ExtrapolationType" title="computils.globals.ExtrapolationType"><span class="pre">ExtrapolationType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ExtrapolationType.nan</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#computils.globals.Interpolator" title="computils.globals.Interpolator"><span class="pre">Interpolator</span></a></span></span><a class="reference internal" href="_modules/computils/factory.html#create_interpolator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.factory.create_interpolator" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an instance of the Interpolator class with the given inter- and extrapolation types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – </p></li>
+<li><p><strong>y</strong> – </p></li>
+<li><p><strong>inter_type</strong> – </p></li>
+<li><p><strong>extra_type</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an instance of the Interpolator class with the given inter- and extrapolation types.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.fast_eval">
+<span id="computils-fast-eval-module"></span><h2>computils.fast_eval module<a class="headerlink" href="#module-computils.fast_eval" title="Permalink to this heading"></a></h2>
+<p>This module collects functionality for fast evaluation of matrix operations.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.fast_eval.fast_matrix_inversion">
+<span class="sig-prename descclassname"><span class="pre">computils.fast_eval.</span></span><span class="sig-name descname"><span class="pre">fast_matrix_inversion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/fast_eval.html#fast_matrix_inversion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.fast_eval.fast_matrix_inversion" title="Permalink to this definition"></a></dt>
+<dd><p>Performs fast matrix inversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>M</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The inverse of M.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.fast_eval.fast_determinant">
+<span class="sig-prename descclassname"><span class="pre">computils.fast_eval.</span></span><span class="sig-name descname"><span class="pre">fast_determinant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/fast_eval.html#fast_determinant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.fast_eval.fast_determinant" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the determinant of M.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>M</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>det(M).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.fast_eval.fast_quadratic_form">
+<span class="sig-prename descclassname"><span class="pre">computils.fast_eval.</span></span><span class="sig-name descname"><span class="pre">fast_quadratic_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/fast_eval.html#fast_quadratic_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.fast_eval.fast_quadratic_form" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the quadratic form x’Ax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – An (n,n) array.</p></li>
+<li><p><strong>x</strong> – An (n,1) array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the quadratic form x’Ax.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.fast_eval.fast_columnwise_bilinear_form">
+<span class="sig-prename descclassname"><span class="pre">computils.fast_eval.</span></span><span class="sig-name descname"><span class="pre">fast_columnwise_bilinear_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/fast_eval.html#fast_columnwise_bilinear_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.fast_eval.fast_columnwise_bilinear_form" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Efficiently compute the bilinear form A_i.T &#64; B &#64; C_i for i = 1,…,n, with A_i and C_i denoting the columns</dt><dd><p>of the matrices A_i and C_i, respectively.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – (m, n) np array</p></li>
+<li><p><strong>B</strong> – (m, m) np array</p></li>
+<li><p><strong>C</strong> – (m, n) np array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an (n,) np array containing the results</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.finite_difference">
+<span id="computils-finite-difference-module"></span><h2>computils.finite_difference module<a class="headerlink" href="#module-computils.finite_difference" title="Permalink to this heading"></a></h2>
+<p>This module contains functionality for the numerical computation of derivatives using finite difference
+based on the discussion in Numerical Recipes.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.finite_difference.compute_derivative">
+<span class="sig-prename descclassname"><span class="pre">computils.finite_difference.</span></span><span class="sig-name descname"><span class="pre">compute_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/finite_difference.html#compute_derivative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.finite_difference.compute_derivative" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the first- or second-order derivative using finite differences for a given function at the point x.</p>
+<p>Remarks: x is assumed to correspond to the first parameter of func.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – a function f: R -&gt; R, with x corresponding to its first parameter.</p></li>
+<li><p><strong>x</strong> – the point(s) of interest.</p></li>
+<li><p><strong>order</strong> – 1 or 2, the order of which to compute the derivative.</p></li>
+<li><p><strong>args</strong> – additional arguments to the function in the correct order.</p></li>
+<li><p><strong>step_size</strong> – a scalar &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the fd estimate(s) of the first-order derivative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.finite_difference.compute_gradient">
+<span class="sig-prename descclassname"><span class="pre">computils.finite_difference.</span></span><span class="sig-name descname"><span class="pre">compute_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/finite_difference.html#compute_gradient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.finite_difference.compute_gradient" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the gradient using finite differences for a given function at the point x.</p>
+<p>Remarks: x is assumed to correspond to the first parameter of func.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – a function f: R^n -&gt; R, with x corresponding to its first parameter.</p></li>
+<li><p><strong>x</strong> – an (n,) np array corresponding to the point of interest.</p></li>
+<li><p><strong>args</strong> – additional arguments to the function in the correct order.</p></li>
+<li><p><strong>step_size</strong> – a scalar &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an (n, 1) array containing the numerical approximation of the gradient.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.finite_difference.compute_jacobian">
+<span class="sig-prename descclassname"><span class="pre">computils.finite_difference.</span></span><span class="sig-name descname"><span class="pre">compute_jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/finite_difference.html#compute_jacobian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.finite_difference.compute_jacobian" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the Jacobian using finite differences for a given function at the point x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – a function f: R^n -&gt; R^m (i.e. returns an (m,) np array of function values), with x corresponding to
+its first parameter.</p></li>
+<li><p><strong>x</strong> – an (n,) np array corresponding to the point of interest.</p></li>
+<li><p><strong>args</strong> – additional arguments to the function in the correct order.</p></li>
+<li><p><strong>step_size</strong> – a scalar &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an (m, n) array containing the numerical approximation of the Jacobian.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.finite_difference.compute_hessian">
+<span class="sig-prename descclassname"><span class="pre">computils.finite_difference.</span></span><span class="sig-name descname"><span class="pre">compute_hessian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/finite_difference.html#compute_hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.finite_difference.compute_hessian" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the Hessian matrix using finite differences for a given function at the point x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – a function f: R^n -&gt; R, with x corresponding to its first parameter..</p></li>
+<li><p><strong>x</strong> – an (n,) np array corresponding to the point of interest.</p></li>
+<li><p><strong>args</strong> – additional arguments to the function in the correct order.</p></li>
+<li><p><strong>step_size</strong> – a scalar &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an (n, n) array containing the numerical approximation of the hessian.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.finite_difference.get_step_sizes">
+<span class="sig-prename descclassname"><span class="pre">computils.finite_difference.</span></span><span class="sig-name descname"><span class="pre">get_step_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivative_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/finite_difference.html#get_step_sizes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.finite_difference.get_step_sizes" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an (x.size, 1) array for derivative_order 1, and an (x.size, x.size) array for derivative_order 2</p>
+</dd></dl>
+
+</section>
+<section id="module-computils.gaussian_elim_spp">
+<span id="computils-gaussian-elim-spp-module"></span><h2>computils.gaussian_elim_spp module<a class="headerlink" href="#module-computils.gaussian_elim_spp" title="Permalink to this heading"></a></h2>
+<p>This module implements functionality related to Gaussian elimination with scaled partial pivoting.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.gaussian_elim_spp.compute_inverse_using_gauss_elim_spp">
+<span class="sig-prename descclassname"><span class="pre">computils.gaussian_elim_spp.</span></span><span class="sig-name descname"><span class="pre">compute_inverse_using_gauss_elim_spp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">square_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/gaussian_elim_spp.html#compute_inverse_using_gauss_elim_spp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.gaussian_elim_spp.compute_inverse_using_gauss_elim_spp" title="Permalink to this definition"></a></dt>
+<dd><p>Uses Gaussian elimination with scaled partial pivoting to compute the inverse of the given square matrix.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.gaussian_elim_spp.perform_gauss_elim_spp">
+<span class="sig-prename descclassname"><span class="pre">computils.gaussian_elim_spp.</span></span><span class="sig-name descname"><span class="pre">perform_gauss_elim_spp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/gaussian_elim_spp.html#perform_gauss_elim_spp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.gaussian_elim_spp.perform_gauss_elim_spp" title="Permalink to this definition"></a></dt>
+<dd><p>Performs Gaussian elimination with scaled partial pivoting to put the matrix [a b] in echelon form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – an (n, n) array representing a square matrix.</p></li>
+<li><p><strong>b</strong> – an (n, n_b) array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>echelon_matrix: an (n, n + n_b) matrix corresponding to [a b] in reduced echelon form, in which
+the rows may have been swapped.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.gaussian_elim_spp.perform_back_substitution">
+<span class="sig-prename descclassname"><span class="pre">computils.gaussian_elim_spp.</span></span><span class="sig-name descname"><span class="pre">perform_back_substitution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">echelon_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/gaussian_elim_spp.html#perform_back_substitution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.gaussian_elim_spp.perform_back_substitution" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms a matrix in echelon form to reduced echelon form using back substitution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>echelon_matrix</strong> – a matrix [A B] in echelon form.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>reduced_matrix: the result of the matrix [A B] after back substitution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.globals">
+<span id="computils-globals-module"></span><h2>computils.globals module<a class="headerlink" href="#module-computils.globals" title="Permalink to this heading"></a></h2>
+<p>This module collects all exposed types.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.MACHINE_EPS">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">MACHINE_EPS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">final</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.1102230246251565e-16</span></em><a class="headerlink" href="#computils.globals.MACHINE_EPS" title="Permalink to this definition"></a></dt>
+<dd><p>max relative error corresponding to 1/2 ULP</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.SQUARE_ROOT_MACHINE_EPS">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">SQUARE_ROOT_MACHINE_EPS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">final</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0536712127723509e-08</span></em><a class="headerlink" href="#computils.globals.SQUARE_ROOT_MACHINE_EPS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.CUBE_ROOT_MACHINE_EPS">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">CUBE_ROOT_MACHINE_EPS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">final</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4.806217383937352e-06</span></em><a class="headerlink" href="#computils.globals.CUBE_ROOT_MACHINE_EPS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.FOURTH_ROOT_MACHINE_EPS">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">FOURTH_ROOT_MACHINE_EPS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">final</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0001026484881901507</span></em><a class="headerlink" href="#computils.globals.FOURTH_ROOT_MACHINE_EPS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.Integer">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">Integer</span></span><a class="headerlink" href="#computils.globals.Integer" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint64</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.Float">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">Float</span></span><a class="headerlink" href="#computils.globals.Float" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float128</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.Complex">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">Complex</span></span><a class="headerlink" href="#computils.globals.Complex" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex256</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.Scalar">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">Scalar</span></span><a class="headerlink" href="#computils.globals.Scalar" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex256</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.IntOrArray">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">IntOrArray</span></span><a class="headerlink" href="#computils.globals.IntOrArray" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.FloatOrArray">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">FloatOrArray</span></span><a class="headerlink" href="#computils.globals.FloatOrArray" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.ComplexOrArray">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">ComplexOrArray</span></span><a class="headerlink" href="#computils.globals.ComplexOrArray" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex256</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.ScalarOrArray">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">ScalarOrArray</span></span><a class="headerlink" href="#computils.globals.ScalarOrArray" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float16</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float32</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex64</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex128</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex256</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="computils.globals.BoolOrArray">
+<span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">BoolOrArray</span></span><a class="headerlink" href="#computils.globals.BoolOrArray" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bool_</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">InterpolationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/globals.html#InterpolationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.globals.InterpolationType" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#computils.globals.InterpolationType.linear" title="Permalink to this definition"></a></dt>
+<dd><p>linear interpolation</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType.ncs">
+<span class="sig-name descname"><span class="pre">ncs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#computils.globals.InterpolationType.ncs" title="Permalink to this definition"></a></dt>
+<dd><p>natural cubic spline</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType.ccs">
+<span class="sig-name descname"><span class="pre">ccs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#computils.globals.InterpolationType.ccs" title="Permalink to this definition"></a></dt>
+<dd><p>clamped cubic spline</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType.pmc">
+<span class="sig-name descname"><span class="pre">pmc</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#computils.globals.InterpolationType.pmc" title="Permalink to this definition"></a></dt>
+<dd><p>piecewise monotone cubic [FC80]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.InterpolationType.pchip">
+<span class="sig-name descname"><span class="pre">pchip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#computils.globals.InterpolationType.pchip" title="Permalink to this definition"></a></dt>
+<dd><p>piecewise cubic Hermite interpolation polynomial [FB84]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="computils.globals.ExtrapolationType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">ExtrapolationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/globals.html#ExtrapolationType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.globals.ExtrapolationType" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.ExtrapolationType.nan">
+<span class="sig-name descname"><span class="pre">nan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#computils.globals.ExtrapolationType.nan" title="Permalink to this definition"></a></dt>
+<dd><p>set extrapolated values to nan</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.ExtrapolationType.flat">
+<span class="sig-name descname"><span class="pre">flat</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#computils.globals.ExtrapolationType.flat" title="Permalink to this definition"></a></dt>
+<dd><p>set all extrapolated values equal to the nearest interpolated value (constant or flat extrapolation).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="computils.globals.Interpolator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">computils.globals.</span></span><span class="sig-name descname"><span class="pre">Interpolator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.InterpolationType" title="computils.globals.InterpolationType"><span class="pre">InterpolationType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.ExtrapolationType" title="computils.globals.ExtrapolationType"><span class="pre">ExtrapolationType</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/globals.html#Interpolator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.globals.Interpolator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="computils.globals.Interpolator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.InterpolationType" title="computils.globals.InterpolationType"><span class="pre">InterpolationType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#computils.globals.ExtrapolationType" title="computils.globals.ExtrapolationType"><span class="pre">ExtrapolationType</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/globals.html#Interpolator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.globals.Interpolator.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Class to perform inter- and extrapolation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inter_type</strong> – interpolation type.</p></li>
+<li><p><strong>extra_type</strong> – extrapolation type.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.Interpolator.inter_type">
+<span class="sig-name descname"><span class="pre">inter_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#computils.globals.InterpolationType" title="computils.globals.InterpolationType"><span class="pre">InterpolationType</span></a></em><a class="headerlink" href="#computils.globals.Interpolator.inter_type" title="Permalink to this definition"></a></dt>
+<dd><p>the interpolation type</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.globals.Interpolator.extra_type">
+<span class="sig-name descname"><span class="pre">extra_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#computils.globals.ExtrapolationType" title="computils.globals.ExtrapolationType"><span class="pre">ExtrapolationType</span></a></em><a class="headerlink" href="#computils.globals.Interpolator.extra_type" title="Permalink to this definition"></a></dt>
+<dd><p>the extrapolation type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="computils.globals.Interpolator.__call__">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex256</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex256</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/globals.html#Interpolator.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.globals.Interpolator.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the inter- or extrapolated value(s) at the given domain value(s) ‘x’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – domain value(s) at which to compute the inter- or extrapolated value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the inter- or extrapolated value(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-computils.matrix_computations">
+<span id="computils-matrix-computations-module"></span><h2>computils.matrix_computations module<a class="headerlink" href="#module-computils.matrix_computations" title="Permalink to this heading"></a></h2>
+<p>This module contains functionality related to matrix computations.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.matrix_computations.robust_inverse">
+<span class="sig-prename descclassname"><span class="pre">computils.matrix_computations.</span></span><span class="sig-name descname"><span class="pre">robust_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">square_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/matrix_computations.html#robust_inverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.matrix_computations.robust_inverse" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the inverse of the square matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>square_matrix</strong> – (n, n) array corresponding to an invertible matrix.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>inverse_matrix: (n, n) array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.matrix_computations.is_diagonal">
+<span class="sig-prename descclassname"><span class="pre">computils.matrix_computations.</span></span><span class="sig-name descname"><span class="pre">is_diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/computils/matrix_computations.html#is_diagonal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.matrix_computations.is_diagonal" title="Permalink to this definition"></a></dt>
+<dd><p>Determines if the given matrix is diagonal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>matrix</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if matrix is diagonal, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.parallelization">
+<span id="computils-parallelization-module"></span><h2>computils.parallelization module<a class="headerlink" href="#module-computils.parallelization" title="Permalink to this heading"></a></h2>
+<p>This module contains functionality for parallelization.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">computils.parallelization.</span></span><span class="sig-name descname"><span class="pre">BatchAllocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/parallelization.html#BatchAllocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parallelization.BatchAllocation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/computils/parallelization.html#BatchAllocation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parallelization.BatchAllocation.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes a BatchAllocation object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_id</strong> – unique number to identify batch.</p></li>
+<li><p><strong>n_cores</strong> – &gt;= 1, number of physical cores allocated to this batch.</p></li>
+<li><p><strong>indices</strong> – contains the indices of the elements allocated to this batch.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation.batch_id">
+<span class="sig-name descname"><span class="pre">batch_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#computils.parallelization.BatchAllocation.batch_id" title="Permalink to this definition"></a></dt>
+<dd><p>id number to identify a batch</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation.n_cores">
+<span class="sig-name descname"><span class="pre">n_cores</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#computils.parallelization.BatchAllocation.n_cores" title="Permalink to this definition"></a></dt>
+<dd><p>the number of cores allocated to the batch</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation.indices">
+<span class="sig-name descname"><span class="pre">indices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#computils.parallelization.BatchAllocation.indices" title="Permalink to this definition"></a></dt>
+<dd><p>the indices allocated to the batch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="computils.parallelization.BatchAllocation.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/computils/parallelization.html#BatchAllocation.batch_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parallelization.BatchAllocation.batch_size" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of indices allocated to the batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of indices allocated to the batch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parallelization.get_batch_allocations">
+<span class="sig-prename descclassname"><span class="pre">computils.parallelization.</span></span><span class="sig-name descname"><span class="pre">get_batch_allocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#computils.parallelization.BatchAllocation" title="computils.parallelization.BatchAllocation"><span class="pre">BatchAllocation</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/computils/parallelization.html#get_batch_allocations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parallelization.get_batch_allocations" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an allocation of elements over batches such that the maximum number of elements per core is minimized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_elements</strong> – the number of elements to be allocated over the cores.</p></li>
+<li><p><strong>n_cores</strong> – optional, number of physical cores to be used for the batch allocations. If None, all physical
+cores are used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list with batch allocations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parallelization.get_n_physical_cores">
+<span class="sig-prename descclassname"><span class="pre">computils.parallelization.</span></span><span class="sig-name descname"><span class="pre">get_n_physical_cores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/computils/parallelization.html#get_n_physical_cores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parallelization.get_n_physical_cores" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of physical cores on your machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of physical cores on your machine.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.parameter_transformations">
+<span id="computils-parameter-transformations-module"></span><h2>computils.parameter_transformations module<a class="headerlink" href="#module-computils.parameter_transformations" title="Permalink to this heading"></a></h2>
+<p>This module contains transformations and their inverse functions for imposing parameter restrictions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.impose_lower_bound">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">impose_lower_bound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformed_parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#impose_lower_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.impose_lower_bound" title="Permalink to this definition"></a></dt>
+<dd><p>Imposes a lower bound on transformed_parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformed_parameter</strong> – any real number.</p></li>
+<li><p><strong>lower_bound</strong> – any real number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the corresponding parameter value with the lower bound imposed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.inverse_impose_lower_bound">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">inverse_impose_lower_bound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#inverse_impose_lower_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.inverse_impose_lower_bound" title="Permalink to this definition"></a></dt>
+<dd><p>Applies the inverse lower-bound transformation to parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> – a real number which adheres to the given lower bound.</p></li>
+<li><p><strong>lower_bound</strong> – any real number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed parameter, which can take on any real number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.impose_upper_bound">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">impose_upper_bound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformed_parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#impose_upper_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.impose_upper_bound" title="Permalink to this definition"></a></dt>
+<dd><p>Imposes an upper bound on transformed_parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformed_parameter</strong> – any real number.</p></li>
+<li><p><strong>upper_bound</strong> – any real number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the corresponding parameter value with the upper bound imposed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.inverse_impose_upper_bound">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">inverse_impose_upper_bound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#inverse_impose_upper_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.inverse_impose_upper_bound" title="Permalink to this definition"></a></dt>
+<dd><p>Applies the inverse upper-bound transformation to parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> – a real number which adheres to the given upper bound.</p></li>
+<li><p><strong>upper_bound</strong> – any real number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed parameter, which can take on any real number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.impose_bounds">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">impose_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformed_parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#impose_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.impose_bounds" title="Permalink to this definition"></a></dt>
+<dd><p>Imposes a lower and an upper bound on transformed_parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformed_parameter</strong> – any real number.</p></li>
+<li><p><strong>lower_bound</strong> – any real number.</p></li>
+<li><p><strong>upper_bound</strong> – any real number strictly larger than lower bound.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a real number which adheres to the given bounds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.inverse_impose_bounds">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">inverse_impose_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#inverse_impose_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.inverse_impose_bounds" title="Permalink to this definition"></a></dt>
+<dd><p>Applies the inverse bounds transformation to parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> – a real number which adheres to the given bounds.</p></li>
+<li><p><strong>lower_bound</strong> – any real number.</p></li>
+<li><p><strong>upper_bound</strong> – any real number strictly larger than lower bound.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed parameter, which can take on any real number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.impose_upper_bound_sum">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">impose_upper_bound_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transformed_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#impose_upper_bound_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.impose_upper_bound_sum" title="Permalink to this definition"></a></dt>
+<dd><p>Imposes an upper bound on the sum of params, such that all params are in (0, upper_bound).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transformed_params</strong> – (n_params,) array of transformed parameters, real numbers</p></li>
+<li><p><strong>upper_bound</strong> – real number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constrained_params: (n_params,) array of parameters with constraints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.parameter_transformations.inverse_impose_upper_bound_sum">
+<span class="sig-prename descclassname"><span class="pre">computils.parameter_transformations.</span></span><span class="sig-name descname"><span class="pre">inverse_impose_upper_bound_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/parameter_transformations.html#inverse_impose_upper_bound_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.parameter_transformations.inverse_impose_upper_bound_sum" title="Permalink to this definition"></a></dt>
+<dd><p>Inverse transformation function of impose_upper_bound_sum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> – (n_params,) array of params that are all in (0, upper_bound)</p></li>
+<li><p><strong>upper_bound</strong> – real number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>unconstrained_params</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.performance_checking">
+<span id="computils-performance-checking-module"></span><h2>computils.performance_checking module<a class="headerlink" href="#module-computils.performance_checking" title="Permalink to this heading"></a></h2>
+<p>This module provides functionality for checking the running time performance of code.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.performance_checking.compute_average_running_time">
+<span class="sig-prename descclassname"><span class="pre">computils.performance_checking.</span></span><span class="sig-name descname"><span class="pre">compute_average_running_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/computils/performance_checking.html#compute_average_running_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.performance_checking.compute_average_running_time" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the average running time of a function evaluation for given number of repeats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback_func</strong> – the function to be evaluated</p></li>
+<li><p><strong>args</strong> – arguments to the callback</p></li>
+<li><p><strong>n_repeats</strong> – &gt; 1, number of repeats of the function evaluation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>average_running_time_in_seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.sorting_algorithms">
+<span id="computils-sorting-algorithms-module"></span><h2>computils.sorting_algorithms module<a class="headerlink" href="#module-computils.sorting_algorithms" title="Permalink to this heading"></a></h2>
+<p>This module implements various sorting algorithms based on Python’s bisect module. It is based on the implementation 
+suggested in <a class="reference external" href="https://stackoverflow.com/questions/6628744/search-for-before-and-after-values-in-a-long-sorted-list">https://stackoverflow.com/questions/6628744/search-for-before-and-after-values-in-a-long-sorted-list</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.sorting_algorithms.index_eq">
+<span class="sig-prename descclassname"><span class="pre">computils.sorting_algorithms.</span></span><span class="sig-name descname"><span class="pre">index_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/computils/sorting_algorithms.html#index_eq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.sorting_algorithms.index_eq" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the index of the leftmost value in a that is exactly equal to x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>x</strong> – an object with ‘&lt;’ and ‘==’ operators.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the index, or None if the x is not in a.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.sorting_algorithms.find_lt">
+<span class="sig-prename descclassname"><span class="pre">computils.sorting_algorithms.</span></span><span class="sig-name descname"><span class="pre">find_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/computils/sorting_algorithms.html#find_lt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.sorting_algorithms.find_lt" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the rightmost value in a that is less than x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>x</strong> – an object with ‘&lt;’ and ‘==’ operators.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the rightmost value in a that is less than x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.sorting_algorithms.find_le">
+<span class="sig-prename descclassname"><span class="pre">computils.sorting_algorithms.</span></span><span class="sig-name descname"><span class="pre">find_le</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/computils/sorting_algorithms.html#find_le"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.sorting_algorithms.find_le" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the rightmost value in a that is less than or equal to x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>x</strong> – an object with ‘&lt;’ and ‘==’ operators.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the rightmost value in a that is less than or equal to x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.sorting_algorithms.find_gt">
+<span class="sig-prename descclassname"><span class="pre">computils.sorting_algorithms.</span></span><span class="sig-name descname"><span class="pre">find_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/computils/sorting_algorithms.html#find_gt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.sorting_algorithms.find_gt" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the leftmost value in a that is greater than x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>x</strong> – an object with ‘&lt;’ and ‘==’ operators.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the leftmost value in a that is greater than x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.sorting_algorithms.find_ge">
+<span class="sig-prename descclassname"><span class="pre">computils.sorting_algorithms.</span></span><span class="sig-name descname"><span class="pre">find_ge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/computils/sorting_algorithms.html#find_ge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.sorting_algorithms.find_ge" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the leftmost value in a that is greater than or equal to x.</p>
+<p>Remark: raises a value error if</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>x</strong> – an object with ‘&lt;’ and ‘==’ operators.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the leftmost value in a that is greater than or equal to x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils.type_utils">
+<span id="computils-type-utils-module"></span><h2>computils.type_utils module<a class="headerlink" href="#module-computils.type_utils" title="Permalink to this heading"></a></h2>
+<p>This module implements helping functions for the introduced types.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.size">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint8</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">uint64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">complex256</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.size" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of elements in x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the number of elements in x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.to_1d_array">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">to_1d_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#to_1d_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.to_1d_array" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms x into a 1d array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a 1-dimensional array corresponding to x.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.to_float_if_singleton">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">to_float_if_singleton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float16</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float32</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float64</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float128</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#to_float_if_singleton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.to_float_if_singleton" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms x into a Float if it has a single element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>x if it is an array, or x as a float if it has only a single element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.has_nan">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">has_nan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#has_nan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.has_nan" title="Permalink to this definition"></a></dt>
+<dd><p>Checks whether any element in x is NaN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if any element in x is NaN, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.compute_hash">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">compute_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_chars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#compute_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.compute_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a hash for the given array a. The hashing algorithm for np arrays is based on
+<a class="reference external" href="https://stackoverflow.com/questions/64753916/unique-identifier-for-numpy-array">https://stackoverflow.com/questions/64753916/unique-identifier-for-numpy-array</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – </p></li>
+<li><p><strong>n_chars</strong> – the number of characters in the hashing string.</p></li>
+<li><p><strong>include_dtype</strong> – if True also incorporate the dtype in the hash.</p></li>
+<li><p><strong>include_shape</strong> – if True also incorporate the shape in the hash (so two arrays with identical elements but a different shape receive a different hash string).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the hash string corresponding to the given array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.dicts_to_array">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">dicts_to_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#dicts_to_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.dicts_to_array" title="Permalink to this definition"></a></dt>
+<dd><p>Converts a list of dicts with indices as keys to an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dicts</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>array corresponding to the list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="computils.type_utils.dict_to_array">
+<span class="sig-prename descclassname"><span class="pre">computils.type_utils.</span></span><span class="sig-name descname"><span class="pre">dict_to_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/computils/type_utils.html#dict_to_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#computils.type_utils.dict_to_array" title="Permalink to this definition"></a></dt>
+<dd><p>Convert a dict with indices as keys to an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>d</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>array corresponding to the dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-computils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-computils" title="Permalink to this heading"></a></h2>
+<p>This module serves as the interface of the computils package.</p>
+<dl class="simple">
+<dt>References:</dt><dd><dl class="simple">
+<dt>FC80: Frederick N. Fritsch and Ralph E. Carlson. Monotone piecewise cubic interpolation. SIAM Journal on</dt><dd><p>Numerical Analysis, 17(2):238–246, 1980. doi:10.1137/0717021.</p>
+</dd>
+<dt>FB84: Frederick N. Fritsch and Judy Butland. A method for constructing local monotone piecewise cubic</dt><dd><p>interpolants. SIAM Journal on Scientific and Statistical Computing, 5(2):300–304, 1984. doi:10.1137/0905021.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, k-moussa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
