@@ -11,8 +11,8 @@ CUBE_ROOT_MACHINE_EPS: final = np.cbrt(MACHINE_EPS)  #:
 FOURTH_ROOT_MACHINE_EPS: final = np.power(MACHINE_EPS, 1/4)  #:
 
 Integer: final = Union[int, np.int8, np.int16, np.int32, np.int64, np.uint8, np.uint16, np.uint32, np.uint64]  #:
-Float: final = Union[float, np.float16, np.float32, np.float64, np.float128]  #:
-Complex: final = Union[complex, np.complex64, np.complex128, np.complex256]  #:
+Float: final = Union[float, np.float16, np.float32, np.float64]  #:
+Complex: final = Union[complex, np.complex64, np.complex128]  #:
 Scalar: final = Union[Integer, Float, Complex]  #:
 Bool: final = Union[bool, np.bool_]
 
